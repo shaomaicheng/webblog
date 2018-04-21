@@ -1,0 +1,31 @@
+.log {
+    margin-left: 10%;
+    /*往下移动 25 px 再往上移动自己的 50%*/
+    position: absolute;
+    top: 25px;
+    transform: translateY(-50%);
+}
+
+
+.logname {
+    background: black;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline;
+    padding: 3px 5px 3px 5px;
+    border-radius: 3px;
+}
+
+.authorname {
+    display: inline;
+    margin-left: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.authorname:hover {
+    color: green
+}
