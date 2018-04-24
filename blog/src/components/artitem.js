@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from '../css/artitem.css'
+import '../css/artitem.css'
 import date from '../resource/date.svg'
 
 export default class ArtItem extends Component {
@@ -33,15 +33,15 @@ export default class ArtItem extends Component {
                 onMouseOver={this.onDivMouseOver}
                 onMouseOut={this.onMouseOut}>
                 {/* 标题 */}
-                <p className={styles.artitemtitle}
+                <p className='artitemtitle'
                     style={style}>{this.props.title}</p>
                 {/* 图标 */}
-                <img src={date} className={styles.artitemicon}/>
+                <img src={date} className='artitemicon'/>
                 {/* 日期 */}
-                <p className={styles.artitemdate}>{this.props.date}</p>
+                <p className='artitemdate'>{this.props.date}</p>
                 <br/>
                 {/* 文章开头 */}
-                <p className={styles.artitemcontent}>{this.props.content}</p>
+                <p className='artitemcontent'>{this.props.content}</p>
             </div>
         )
     }

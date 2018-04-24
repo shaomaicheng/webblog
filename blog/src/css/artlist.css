@@ -1,7 +1,6 @@
 .artlist {
-    width: 60%;
+    width: 50%;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 30px;
+    left: 20%;
+    margin-top: 90px;
 }

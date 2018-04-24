@@ -1,22 +1,22 @@
-:local(.artitemdiv) {
+.artitemdiv {
     width: 100%;
 }
 
-:local(.artitemdiv:hover) {
+.artitemdiv:hover {
     cursor: pointer;
 }
 
-:local(.artitemtitle) {
+.artitemtitle {
     font-size: 30px;
     font-weight: 100;
 }
 
-:local(.artitemicon) {
+.artitemicon {
     width: 35px;
     height: 30px;
 }
 
-:local(.artitemdate) {
+.artitemdate {
     color: gray;
     font-weight: 100;
     font-size: 20px;
@@ -26,7 +26,7 @@
     margin-left: 5px;
 }
 
-:local(.artitemcontent) {
+.artitemcontent {
     color: gray;
     margin: 0 0 20px;
     line-height: 27px;

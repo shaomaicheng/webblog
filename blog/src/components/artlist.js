@@ -34,17 +34,21 @@ export default class ArtList extends Component {
 
     render() {
         const data = this.state.list
-        let finallist = []
-        data.map(item=>{
-            finallist.push(<ArtItem
-                title={item.title}
-                date={item.date}
-                content={item.content}/>)
-        })
-        console.log(finallist)
+        let index = -1
         return(
             <div className='artlist'>
-                {finallist}
+                {
+                    data.map(item => {
+                        index++
+                        return (
+                            <ArtItem
+                                key={'artitem_' + index}
+                                title={item.title}
+                                date={item.date}
+                                content={item.content}/>
+                        )
+                    })
+                }
             </div>
         )
     }
