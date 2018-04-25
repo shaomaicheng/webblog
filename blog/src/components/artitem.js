@@ -36,7 +36,7 @@ export default class ArtItem extends Component {
                 <p className='artitemtitle'
                     style={style}>{this.props.title}</p>
                 {/* 图标 */}
-                <img src={date} className='artitemicon'/>
+                <img src={date} className='artitemicon' alt='图标飞了'/>
                 {/* 日期 */}
                 <p className='artitemdate'>{this.props.date}</p>
                 <br/>

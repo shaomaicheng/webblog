@@ -1,0 +1,10 @@
+.friend_a {
+    text-decoration-line: none;
+    color: gray;
+    font-weight: 100;
+    margin-left: 5px;
+}
+
+.friend_a:hover {
+    color: black;
+}
