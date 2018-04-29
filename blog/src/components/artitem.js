@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import '../css/artitem.css'
 import date from '../resource/date.svg'
+import {withRouter} from "react-router-dom";
 
-export default class ArtItem extends Component {
+class ArtItem extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -10,6 +11,7 @@ export default class ArtItem extends Component {
         }
         this.onDivMouseOver = this.onDivMouseOver.bind(this)
         this.onMouseOut = this.onMouseOut.bind(this)
+        this.onClickArt = this.onClickArt.bind(this)
     }
 
     onDivMouseOver() {
@@ -24,6 +26,10 @@ export default class ArtItem extends Component {
         })
     }
 
+    onClickArt() {
+        this.props.history.push('/art/' + this.props.id)
+    }
+
     render() {
         const style = {
             color: this.state.titleColor
@@ -31,7 +37,8 @@ export default class ArtItem extends Component {
         return (
             <div className='artitemdiv'
                 onMouseOver={this.onDivMouseOver}
-                onMouseOut={this.onMouseOut}>
+                onMouseOut={this.onMouseOut}
+                onClick={this.onClickArt}>
                 {/* 标题 */}
                 <p className='artitemtitle'
                     style={style}>{this.props.title}</p>
@@ -46,3 +53,4 @@ export default class ArtItem extends Component {
         )
     }
 }
+export default withRouter(ArtItem);

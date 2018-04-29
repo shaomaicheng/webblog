@@ -9,6 +9,7 @@ export default class ArtList extends Component {
         this.state = {
             list: [
                 {
+                    id: 1,
                     title: 'Android源码分析',
                     date: '2018.04.21',
                     content: 'DaoMaster、具体的Dao 和 DaoSession对象为greedao生成的代码'+
@@ -19,6 +20,7 @@ export default class ArtList extends Component {
                     '会话层，操作Dao的具体对象，包括DAO对象的注册'
                 },
                 {
+                    id: 2,
                     title:'Android源码分析',
                     date: '2018.04.19',
                     content: 'DaoMaster、具体的Dao 和 DaoSession对象为greedao生成的代码'+
@@ -34,15 +36,14 @@ export default class ArtList extends Component {
 
     render() {
         const data = this.state.list
-        let index = -1
         return(
             <div className='artlist'>
                 {
                     data.map(item => {
-                        index++
                         return (
                             <ArtItem
-                                key={'artitem_' + index}
+                                key={'artitem_' + item.id}
+                                id={item.id}
                                 title={item.title}
                                 date={item.date}
                                 content={item.content}/>
