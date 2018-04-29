@@ -1,6 +1,6 @@
 .info {
     position: absolute;
-    left: 70%;
+    left: 65%;
     margin-left: 5%;
     margin-top: 70px;
 }
@@ -10,6 +10,9 @@
     width: 200px;
     height: 200px;
     border-radius: 200px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%)
 }
 
 .username {
@@ -33,5 +36,4 @@
 
 .userflinks {
     width: 100px;
-    margin-top: 20px;
 }
