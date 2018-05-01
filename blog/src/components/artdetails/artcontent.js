@@ -11,6 +11,7 @@ export default class ArtContent extends Component {
             content: ''
         }
         this.fetchContentUrl = this.fetchContentUrl.bind(this)
+        this.fetchContentUrl()
     }
 
     fetchContentUrl() {
@@ -21,9 +22,9 @@ export default class ArtContent extends Component {
                 return res.text()
             })
             .then(content => {
-                // this.setState({
-                //     content: content
-                // })
+                this.setState({
+                    content: content
+                })
             })
             .catch(e => {
                 console.log('fetch artcontent url has error ', e)
@@ -31,15 +32,12 @@ export default class ArtContent extends Component {
     }
 
     render() {
-
-        this.fetchContentUrl()
-
         return(
             <div>
                 <ReactMarkdown
                     source={this.state.content}
-                    className='artcontent'
-                    skipHtml={true} />
+                    className='markdown-body'>
+                </ReactMarkdown>
             </div>
         )
     }
