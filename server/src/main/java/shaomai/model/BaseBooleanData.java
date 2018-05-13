@@ -1,4 +1,4 @@
-package io.shaomai.model;
+package shaomai.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
