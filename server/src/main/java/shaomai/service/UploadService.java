@@ -10,6 +10,6 @@ public interface UploadService {
     String saveFile(MultipartFile file) throws IOException;
     String parseFile(String filePath) throws IOException;
 
-    void saveArtInfo(String title, String author, String head, String relativePath, long timestamp);
+    void saveArtInfo(String title, String author, String head, String relativePath);
 
 }

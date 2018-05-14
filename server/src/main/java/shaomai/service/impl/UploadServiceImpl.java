@@ -1,5 +1,7 @@
 package shaomai.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import shaomai.dao.ArtDao;
 import shaomai.service.UploadService;
 import shaomai.utils.TextUtil;
 import org.slf4j.Logger;
@@ -11,6 +13,10 @@ import java.io.*;
 
 @Service
 public class UploadServiceImpl implements UploadService {
+
+    @Autowired
+    private ArtDao artDao;
+
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     /**
@@ -34,7 +40,7 @@ public class UploadServiceImpl implements UploadService {
             logger.info("相对路径：" + relativePath);
             // 存入数据库
 
-            saveArtInfo(title, author, head, relativePath, System.currentTimeMillis());
+            saveArtInfo(title, author, head, relativePath);
         }
     }
 
@@ -107,10 +113,9 @@ public class UploadServiceImpl implements UploadService {
      * @param author 作者
      * @param head 文章概要内容
      * @param relativePath md 文件的相对路径
-     * @param timestamp 时间戳
      */
     @Override
-    public void saveArtInfo(String title, String author, String head, String relativePath, long timestamp) {
-
+    public void saveArtInfo(String title, String author, String head, String relativePath) {
+        artDao.insert(title, author, System.currentTimeMillis(), head, relativePath);
     }
 }

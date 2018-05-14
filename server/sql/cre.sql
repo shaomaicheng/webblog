@@ -6,9 +6,9 @@ create table tb_art(
     -- 作者
     author varchar(255) not null,
     -- 时间戳
-    a_date integer(11) not null,
+    a_date BIGINT not null,
     -- 内容前面一部分
-    content varchar(255) not null,
+    content clob not null,
     -- 内容 md 文件 url
     url varchar(255) not null
 )
