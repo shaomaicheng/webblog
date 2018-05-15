@@ -8,7 +8,7 @@ create table tb_art(
     -- 时间戳
     a_date BIGINT not null,
     -- 内容前面一部分
-    content clob not null,
+    content text not null,
     -- 内容 md 文件 url
     url varchar(255) not null
 )
