@@ -1,4 +1,4 @@
-package shaomai.dao;
+package shaomai.test.dao;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
