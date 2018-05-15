@@ -1,9 +1,9 @@
 package shaomai.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import shaomai.test.dao.ArtDao;
+import shaomai.dao.ArtDao;
 import shaomai.service.UploadService;
-import shaomai.test.dao.utils.TextUtil;
+import shaomai.utils.TextUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

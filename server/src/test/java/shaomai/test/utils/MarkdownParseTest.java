@@ -1,7 +1,7 @@
 package shaomai.test.utils;
 
 import org.junit.Test;
-import shaomai.test.dao.utils.MarkdownParser;
+import shaomai.utils.MarkdownParser;
 
 import static org.junit.Assert.assertEquals;
 

@@ -1,4 +1,4 @@
-package shaomai.test.dao.utils;
+package shaomai.utils;
 
 /**
  * 一个简单的将 markdown 内容的字符串的关于 md 语法的内容去除

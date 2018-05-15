@@ -1,4 +1,4 @@
-package shaomai.test.dao.utils;
+package shaomai.utils;
 
 public class TextUtil {
     public static boolean isEmpty(CharSequence charSequence) {
