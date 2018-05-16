@@ -1,6 +1,6 @@
 package shaomai.controller;
 
-import shaomai.model.BaseBooleanData;
+import shaomai.model.v.BaseBooleanData;
 import shaomai.model.BaseBooleanResponse;
 import shaomai.service.UploadService;
 import org.slf4j.Logger;

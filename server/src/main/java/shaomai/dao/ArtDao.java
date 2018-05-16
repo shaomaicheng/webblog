@@ -1,8 +1,9 @@
 package shaomai.dao;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.*;
+import shaomai.model.p.ArtBean;
+
+import java.util.List;
 
 @Mapper
 public interface ArtDao {
@@ -14,4 +15,17 @@ public interface ArtDao {
             @Param("content")String content,
             @Param("url")String url
     );
+
+    @Select("select * from tb_art limit #{pageNo},#{pageSize}")
+    @Results({
+            @Result(property = "id", column = "a_id"),
+            @Result(property = "date", column = "a_date")
+    })
+    List<ArtBean> selectAll(
+            @Param("pageNo") int pageNo,
+            @Param("pageSize") int pageSize
+    );
+
+    @Select("select count(*) from tb_art")
+    int artTotal();
 }

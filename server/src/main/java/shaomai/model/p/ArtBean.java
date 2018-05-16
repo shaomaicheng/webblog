@@ -55,4 +55,14 @@ public class ArtBean {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    @Override
+    public String toString() {
+        return "id: " + id +
+                "\ntitle: " + title +
+                "\nauthor: " + author +
+                "\ndate: " + date +
+                "\ncontent: " + content +
+                "\nurl: " + url;
+    }
 }
