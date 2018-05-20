@@ -8,6 +8,9 @@ public class ArtBean {
     private String content;
     private String url;
 
+    public ArtBean() {
+    }
+
     public long getId() {
         return id;
     }

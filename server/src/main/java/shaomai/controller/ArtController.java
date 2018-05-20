@@ -4,12 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import shaomai.model.p.ArtBean;
 import shaomai.model.http.ArtResponse;
+import shaomai.model.p.ArtBean;
 import shaomai.model.v.ArtListBean;
 import shaomai.service.ArtService;
-import static shaomai.Code.OK_STATUS;
+
 import java.util.List;
+
+import static shaomai.Code.OK_STATUS;
 
 @RestController
 public class ArtController {

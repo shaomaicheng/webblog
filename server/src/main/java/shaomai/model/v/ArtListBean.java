@@ -12,6 +12,9 @@ public class ArtListBean {
     @JsonProperty("total")
     private int total;
 
+    public ArtListBean() {
+    }
+
     public ArtListBean(int total, List<ArtBean> arts) {
         this.total = total;
         this.arts = arts;
