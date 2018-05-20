@@ -9,9 +9,7 @@ import org.springframework.web.client.RestTemplate;
 import shaomai.Application;
 import shaomai.model.Response;
 import shaomai.model.p.ArtBean;
-import shaomai.model.v.ArtListBean;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
