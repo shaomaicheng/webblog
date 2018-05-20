@@ -1,9 +1,9 @@
 package shaomai;
 
-import shaomai.model.ErrorResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import shaomai.model.Response;
 
 import static shaomai.Code.UPLOAD_FAIL;
 
@@ -11,9 +11,8 @@ import static shaomai.Code.UPLOAD_FAIL;
 public class AllExceptionHandler {
     @ExceptionHandler(value = {Exception.class})
     @ResponseBody
-    public ErrorResponse errorResponse(Exception e) {
-        ErrorResponse errorResponse= new ErrorResponse(UPLOAD_FAIL, e.getMessage());
-        errorResponse.data = e.getMessage();
+    public Response<String> errorResponse(Exception e) {
+        Response<String> errorResponse = new Response<>(UPLOAD_FAIL, e.getMessage(), e.getMessage());
         return errorResponse;
     }
 }

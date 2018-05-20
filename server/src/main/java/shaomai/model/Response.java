@@ -2,14 +2,20 @@ package shaomai.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class BaseResponse {
+public class Response<T> {
     @JsonProperty("code")
     public int code;
     @JsonProperty("msg")
     public String message;
+    @JsonProperty("data")
+    public T data;
 
-    public BaseResponse(int code, String message) {
+    public Response() {
+    }
+
+    public Response(int code, String message, T data) {
         this.code = code;
         this.message = message;
+        this.data = data;
     }
 }

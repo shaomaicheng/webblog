@@ -5,11 +5,16 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 import shaomai.Application;
-import shaomai.model.http.ArtResponse;
+import shaomai.model.Response;
+import shaomai.model.p.ArtBean;
+import shaomai.model.v.ArtListBean;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
@@ -23,10 +28,8 @@ public class ArtControllerTest {
     private RestTemplate restTemplate = new RestTemplate();
     @Test
     public void getAllArtsTest() {
-        MultiValueMap<String,String> params = new LinkedMultiValueMap<>();
-        params.add("pageNo", "1");
-        params.add("pageSize", "3");
-        ArtResponse response = restTemplate.getForObject("http://localhost:" + port + "/artlist?pageSize=3&pageNo=1",ArtResponse.class);
-        assertEquals(3, response.data.getArts().size());
+        Response response = restTemplate.getForObject("http://localhost:" + port + "/artlist?pageSize=3&pageNo=1", Response.class);
+        List<ArtBean> artBeans = (List<ArtBean>) ((LinkedHashMap)response.data).get("arts");
+        assertEquals(3, artBeans.size());
     }
 }
