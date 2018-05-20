@@ -1,9 +1,11 @@
 package shaomai.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import shaomai.Code;
 import shaomai.exception.ArtSelectException;
 import shaomai.model.Response;
 import shaomai.model.p.ArtBean;
@@ -36,5 +38,12 @@ public class ArtController {
         ArtListBean artListBean = new ArtListBean(total, arts);
         Response<ArtListBean> artResponse = new Response<>(OK_STATUS, "文章列表", artListBean);
         return artResponse;
+    }
+
+    @RequestMapping("/art/{id}")
+    public Response<ArtBean> getArtById(@PathVariable("id") int id) throws ArtSelectException {
+        ArtBean artBean = artService.getArtById(id);
+        Response<ArtBean> response = new Response<>(Code.OK_STATUS, "查询文章成功", artBean);
+        return response;
     }
 }

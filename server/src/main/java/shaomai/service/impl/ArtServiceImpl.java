@@ -38,4 +38,15 @@ public class ArtServiceImpl implements ArtService {
             throw new ArtSelectException("文章查询失败");
         }
     }
+
+    @Override
+    public ArtBean getArtById(int id) throws ArtSelectException {
+        try {
+            logger.info("根据id获取文章信息");
+            return artDao.selectArtById(id);
+        } catch (Exception e) {
+            logger.error("根据id获取文章信息失败，失败原因：" + e.getMessage());
+            throw new ArtSelectException("文章查询失败");
+        }
+    }
 }

@@ -51,4 +51,11 @@ public class ArtDaoTest {
         int total = artDao.artTotal();
         assertEquals(total, 8);
     }
+
+    @Test
+    @Rollback
+    public void selectArtByIdTest() {
+        ArtBean artBean = artDao.selectArtById(1);
+        System.out.println(artBean);
+    }
 }
