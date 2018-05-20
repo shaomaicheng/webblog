@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import shaomai.exception.ArtSelectException;
 import shaomai.model.http.ArtResponse;
 import shaomai.model.p.ArtBean;
 import shaomai.model.v.ArtListBean;
@@ -28,8 +29,7 @@ public class ArtController {
     @RequestMapping("/artlist")
     public ArtResponse getAllArts(
             @RequestParam("pageNo") int pageNO,
-            @RequestParam("pageSize")int pageSize)
-    {
+            @RequestParam("pageSize")int pageSize) throws ArtSelectException {
         List<ArtBean> arts = artService.getAllArts(pageNO,pageSize);
         int total = artService.artTotal();
         ArtListBean artListBean = new ArtListBean(total, arts);
