@@ -63,7 +63,9 @@ export default class ArtList extends Component {
                                 id={item.id}
                                 title={item.title}
                                 date={getLocalTime(item.date)}
-                                content={item.content}/>
+                                content={item.content}
+                                url={item.url}
+                                author={item.author}/>
                         )
                     })
                 }

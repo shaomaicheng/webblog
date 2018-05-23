@@ -6,8 +6,6 @@ export default class ArtContent extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: 1,
-            contenturl: 'http://localhost:8080/test.md',
             content: ''
         }
         this.fetchContentUrl = this.fetchContentUrl.bind(this)
@@ -15,7 +13,9 @@ export default class ArtContent extends Component {
     }
 
     fetchContentUrl() {
-        fetch(this.state.contenturl, {
+        const url = 'http://127.0.0.1:8080' + this.props.url
+        console.log('文章地址是：' + url)
+        fetch(url, {
             method: 'GET',
         })
             .then(res => {

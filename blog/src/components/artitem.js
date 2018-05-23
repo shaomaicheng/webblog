@@ -27,7 +27,17 @@ class ArtItem extends Component {
     }
 
     onClickArt() {
-        this.props.history.push('/art/' + this.props.id)
+        this.props.history.push({
+            pathname: '/art/' + this.props.id,
+            state: {
+                id: this.props.id,
+                title: this.props.title,
+                date: this.props.date,
+                content: this.props.content,
+                url: this.props.url,
+                author: this.props.author
+            }
+        })
     }
 
     render() {
