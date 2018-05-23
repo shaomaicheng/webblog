@@ -10,7 +10,7 @@ export default class Info extends Component {
             <div className='info'>
                 <img src={Avatar} className='avatar' alt='博主的头像'/>
                 <p className='username'>程磊</p>
-                <p className='usersign'><u>Android程序员，擅长搬砖</u></p>
+                <p className='usersign'><u>Android工程师，擅长搬砖</u></p>
                 <br/>
                 <p className='friend_a'>Friends</p>
                 <Friends className='userflinks'/>
