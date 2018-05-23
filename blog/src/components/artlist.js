@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import ArtItem from '../components/artitem'
 import '../css/artlist.css'
+import {getLocalTime} from '../util'
 
 export default class ArtList extends Component {
 
@@ -8,30 +9,46 @@ export default class ArtList extends Component {
         super(props)
         this.state = {
             list: [
-                {
-                    id: 1,
-                    title: 'Android源码分析',
-                    date: '2018.04.21',
-                    content: 'DaoMaster、具体的Dao 和 DaoSession对象为greedao生成的代码'+
-                    '从平时的使用可以看出他们的作用'+
-                    'DaoMaster' +
-                    'GreenDao的总入口，负责整个库的运行，实现了SqliteOpenHelper'+
-                    'DaoSession'+
-                    '会话层，操作Dao的具体对象，包括DAO对象的注册'
-                },
-                {
-                    id: 2,
-                    title:'Android源码分析',
-                    date: '2018.04.19',
-                    content: 'DaoMaster、具体的Dao 和 DaoSession对象为greedao生成的代码'+
-                    '从平时的使用可以看出他们的作用'+
-                    'DaoMaster' +
-                    'GreenDao的总入口，负责整个库的运行，实现了SqliteOpenHelper'+
-                    'DaoSession'+
-                    '会话层，操作Dao的具体对象，包括DAO对象的注册'
-                }
             ]
         }
+        this.getArtList('http://127.0.0.1:8080/artlist', {
+            pageNo: 0,
+            pageSize: 10
+        })
+    }
+
+    getArtList(url, params) {
+        if (params != null) {
+            let paramsArray = []
+            Object.keys(params).forEach(key => {
+                paramsArray.push(key + '=' + params[key])
+            })
+            if (url.search(/\?/ == -1)) {
+                url += '?' + paramsArray.join('&')
+            } else{
+                url += '&' + paramsArray.join('&')
+            }
+        }
+        this.requestArtList(url)
+    }
+
+    requestArtList(url) {
+        let request = new Request(url, {
+            method: 'GET',
+        })
+        fetch(request).then(res=>{
+            return res.json()
+        }).then(json => {
+            return json.data
+        }).then(data=>{
+            if (data.arts !== undefined) {
+                this.setState({
+                    list: data.arts
+                })
+            }
+        }).catch(e => {
+            console.log('请求文章列表出错，错误：' + e)
+        })
     }
 
     render() {
@@ -45,7 +62,7 @@ export default class ArtList extends Component {
                                 key={'artitem_' + item.id}
                                 id={item.id}
                                 title={item.title}
-                                date={item.date}
+                                date={getLocalTime(item.date)}
                                 content={item.content}/>
                         )
                     })
