@@ -15,9 +15,11 @@
 
 ![](https://github.com/shaomaicheng/webblog/blob/master/img/list.jpeg?raw=true)
 
+--------------------------
 
 ![](https://github.com/shaomaicheng/webblog/blob/master/img/art1.jpeg?raw=true)
 
+--------------------------
 
 ![](https://github.com/shaomaicheng/webblog/blob/master/img/art2.jpeg?raw=true)
 
@@ -34,7 +36,7 @@ server端 todo-list
 web前端 todo-list
 * ~~首页个人信息~~
 * ~~首页文章列表~~
-* ~~文章详情页面~~
+* ~~文章详情页面~~
 * ~~文章支持markdown~~
 * 文章支持语法高亮
 * 加入Redux
