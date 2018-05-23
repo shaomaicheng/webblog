@@ -43,6 +43,7 @@ web前端 todo-list
 
 技术栈：
 * react
+* create-react-app
 * react-markdown
 * react-router
 
@@ -50,3 +51,20 @@ web前端 todo-list
 * MyBatis
 * JUnit
 * Mockito
+
+
+###### 如果您想运行此项目
+1. 启动服务器
+```
+cd server
+mvn spring-boot:run
+```
+
+2. 根据server/sql 里的建表语句建表
+
+3. 启动前端
+```
+cd blog
+npm install
+npm start
+```
