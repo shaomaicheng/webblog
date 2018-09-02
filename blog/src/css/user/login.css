@@ -1,0 +1,36 @@
+@import "~antd/dist/antd.css";
+
+.logininputGroup {
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+.loginBtn {
+    width: 300px;
+}
+
+
+.loginInput {
+    width: 300px !important;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+
+.loginSpinCommon {
+    position: absolute;
+    left: 50%;
+    top: 63px;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.loginSpinDismiss {
+    display: none !important;
+}
