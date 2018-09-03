@@ -109,6 +109,10 @@ export default class LoginComponent extends Component {
 
             if (resJson.code !== -1) {
                 message.error(resJson.msg);
+            } else {
+                message.success(resJson.msg)
+                let user = resJson.data
+                console.log('login success, user is=> ' + user.userId)
             }
 
         } catch (e) {
