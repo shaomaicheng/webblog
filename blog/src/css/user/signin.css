@@ -1,2 +1,32 @@
-.signInDiv {
+@import "~antd/dist/antd.css";
+
+body {
+    background-color: #f1f1f1;
+}
+
+/*注册标题*/
+.signinTitle {
+    margin-top: 50px;
+    margin-left: 100px;
+    color: #1890ff;
+}
+
+.signinDiv {
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+}
+
+.signinCol {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signinCol Input {
+    width: 300px !important;
+    margin-top: 10px;
+    align-self: center;
 }
