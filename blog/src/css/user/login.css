@@ -1,7 +1,6 @@
 @import "~antd/dist/antd.css";
 
 .logininputGroup {
-    text-align: center;
     width: 50%;
     height: 50%;
     left: 50%;
@@ -13,6 +12,10 @@
 
 .loginBtn {
     width: 300px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
 }
 
 
@@ -33,4 +36,27 @@
 
 .loginSpinDismiss {
     display: none !important;
+}
+
+/**
+超链接
+ */
+.tipLinks {
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+/*忘记密码*/
+.forgetpsd {
+
+}
+
+/*注册**/
+.gotoSignin {
+    position: absolute;
+    right: 0;
 }

@@ -27,6 +27,7 @@ export default class LoginComponent extends Component {
         this.login = this.login.bind(this)
         this.handleUsernameChange = this.handleUsernameChange.bind(this)
         this.handlePasswordChange = this.handlePasswordChange.bind(this)
+        this.gotoSignin = this.gotoSignin.bind(this)
         this.state = {
             username: '',
             password: '',
@@ -53,7 +54,12 @@ export default class LoginComponent extends Component {
                         <Input placeholder={'请输入密码'} type='password' className='loginInput' onChange={this.handlePasswordChange}/>
                     </Col>
                 </InputGroup>
-                <br /><br /><br />
+                <br /><br />
+                <div className="tipLinks">
+                    <a className='forgetpsd'>忘记密码</a>
+                    <a className='gotoSignin' onClick={this.gotoSignin}>还没账号？去注册</a>
+                </div>
+                <br/>
                 <Button type='primary' className='loginBtn' size='large' onClick={this.login}>登录</Button>
                 <Spin className={logining? 'loginSpinCommon': 'loginSpinCommon, loginSpinDismiss'}/>
             </div>
@@ -118,5 +124,14 @@ export default class LoginComponent extends Component {
         } catch (e) {
             console.log('login error: ', e)
         }
+    }
+
+    /**
+     * 去注册
+     */
+    gotoSignin() {
+        this.props.history.push({
+            pathname: '/signin'
+        })
     }
 }
