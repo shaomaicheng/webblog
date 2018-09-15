@@ -30,3 +30,39 @@ body {
     margin-top: 10px;
     align-self: center;
 }
+
+.signinCol text {
+    align-self: center;
+    font-size: 2px;
+    min-font-size: 0 !important;
+    margin-top: 1px;
+    width: 300px;
+    color: red;
+}
+
+/*头像上传div*/
+.signinUpladDiv {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+/*头像上传*/
+.signinUpload {
+    align-self: center;
+}
+
+/*注册按钮*/
+.signinBtn {
+    width: 280px;
+    align-self: center;
+    margin-top: 10px;
+}
+
+/*加载框*/
+.spinSignIn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}

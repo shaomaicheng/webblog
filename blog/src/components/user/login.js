@@ -3,6 +3,8 @@ import React, {Component} from 'react'
 import {Input, Col, Spin,  message} from 'antd'
 import Button from 'antd/lib/button'
 import '../../css/user/login.css'
+import md5 from 'js-md5'
+import {isEmpty} from '../../util'
 
 const InputGroup = Input.Group;
 
@@ -28,15 +30,21 @@ export default class LoginComponent extends Component {
         this.handleUsernameChange = this.handleUsernameChange.bind(this)
         this.handlePasswordChange = this.handlePasswordChange.bind(this)
         this.gotoSignin = this.gotoSignin.bind(this)
+
+        let routerState = this.props.location.state
+        console.log('登录页面路由数据：', routerState)
         this.state = {
-            username: '',
-            password: '',
+            username: routerState === undefined ? '' : routerState.username,
+            password: routerState === undefined ? '' : routerState.password,
             logining: false
         }
+
+        document.title = '登录'
+
         message.config({
             getContainer: () => document.getElementById('loginInputDiv'),
-            maxCount: 1,
-            top: 40
+            top: 40,
+            maxCount:1
         })
     }
 
@@ -47,11 +55,13 @@ export default class LoginComponent extends Component {
             <div className="logininputGroup" id='loginInputDiv'>
                 <InputGroup size="large">
                     <Col>
-                        <Input placeholder={'请输入用户名'} className='loginInput' onChange={this.handleUsernameChange}/>
+                        <Input placeholder={'请输入用户名'} className='loginInput' onChange={this.handleUsernameChange}
+                            value={this.state.username}/>
                     </Col>
                     <br /><br /><br />
                     <Col>
-                        <Input placeholder={'请输入密码'} type='password' className='loginInput' onChange={this.handlePasswordChange}/>
+                        <Input placeholder={'请输入密码'} type='password' className='loginInput' onChange={this.handlePasswordChange}
+                            value={this.state.password}/>
                     </Col>
                 </InputGroup>
                 <br /><br />
@@ -82,6 +92,8 @@ export default class LoginComponent extends Component {
             message.warning('请输入密码')
             return
         }
+
+        password  = md5(password)
 
         this.requestLogin(username, password)
     }
